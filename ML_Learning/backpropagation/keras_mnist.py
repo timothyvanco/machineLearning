@@ -65,4 +65,4 @@ plt.legend()
 plt.show()
 
 
-
+ls
