@@ -26,75 +26,78 @@ class NeuralNetwork:
         return "NeuralNetwork: {}".format("-".join(str(layer) for layer in self.layers))
 
     def sigmoid(self, x):
-        return 1.0 / (1 + np.exp(-x))
+        #max = np.ndarray.max(x)
+        #x = x - max
+        #return 1.0 / (1 + np.exp(-x))
+        return np.where(x > 0, 1.0 / (1.0 + np.exp(-x)), np.exp(x) / (np.exp(x) + np.exp(0)))
 
     def sigmoid_deriv(self, x):
         return x * (1 - x)
 
     # fit function responsible for training NN
     # X - training data, y - labels
-    def fit(self, X, y, epochs=1000, displayUpdate=100):
+    def fit(self, training_data, labels, epochs=1000, displayUpdate=100):
         # insert a column of 1's as the last entry in the feature matrix -> bias as trainable parameter
-        X = np.c_[X, np.ones((X.shape[0]))]
+        training_data = np.c_[training_data, np.ones((training_data.shape[0]))]
 
         # loop over desired number of epochs
         for epoch in np.arange(0, epochs):
             # loop over every individual datapoint in training set, make prediction, compute backpropagation
-            for (x, target) in zip(X, y):
+            for (x, target) in zip(training_data, labels):
                 self.fit_partial(x, target)
 
             # check if to display training update
             if epoch == 0 or (epoch + 1) % displayUpdate == 0:
-                loss = self.calculate_loss(X, y)
+                loss = self.calculate_loss(training_data, labels)
                 print("[INFO] epoch={}, loss={:.7f}".format(epoch + 1, loss))
 
 
-    # x - individual data point from matrix
-    # y - corresponding class label
-    def fit_partial(self, x, y):
+    # data_point - individual data point from matrix
+    # class_label - corresponding class label
+    def fit_partial(self, data_point, class_label):
         # construct list of output activations for each layer as data point flows through the network;
         # the first activation is a special case -- it's just the input feature vector itself
-        A = [np.atleast_2d(x)]      # View inputs as arrays with at least two dimensions
+        array_inputs = [np.atleast_2d(data_point)]      # View inputs as arrays with at least two dimensions
 
         # FEEDFORWARD
         # loop over the layers in network
         for layer in np.arange(0, len(self.W)):
             # feedforward the activation at the current layer by taking the dot product between the activation and
             # the weight matrix -- "net input" to the current layer
-            net = A[layer].dot(self.W[layer])
+            net = array_inputs[layer].dot(self.W[layer])
 
             # compute "net output"
             out = self.sigmoid(net)
-            A.append(out)
+            array_inputs.append(out)
 
 
         # BACKPROPAGATION
         # the first phase of backpropagation is to compute the difference between *prediction* (the final output
         # activation in the activations list) and the true target value
-        error = A[-1] - y       # array[-1] - want to acces last entry in the list
+        error = array_inputs[-1] - class_label       # array[-1] - want to access last entry in the list
 
         # here need to apply the chain rule and build list of deltas `D`; the first entry in the deltas is
         # simply the error of the output layer times the derivative of activation function for the output value
-        D = [error * self.sigmoid_deriv(A[-1])] # deltas are used to update weight matrices scaled by learning rate
+        deltas = [error * self.sigmoid_deriv(array_inputs[-1])] # deltas are used to update weight matrices scaled by learning rate
 
         # loop over the layers in reverse order
-        for layer in np.arange(len(A) - 2, 0, -1):
+        for layer in np.arange(len(array_inputs) - 2, 0, -1):
             # delta for the current layer == to the delta of the *previous layer* dotted with the weight matrix
             # of the current layer, followed by multiplying the delta, by the derivative of the nonlinear
             # activation function for the activations of the current layer
-            delta = D[-1].dot(self.W[layer].T)
-            delta = delta * self.sigmoid_deriv(A[layer])
-            D.append(delta)
+            delta = deltas[-1].dot(self.W[layer].T)
+            delta = delta * self.sigmoid_deriv(array_inputs[layer])
+            deltas.append(delta)
 
         # since looped over layers in reverse order need to reverse the deltas
-        D = D[::-1]
+        deltas = deltas[::-1]
 
         # WEIGHT UPDATE PHASE
         for layer in np.arange(0, len(self.W)):
             # update weights by taking dot product of the layer activations with respective deltas
             # then multiplying this value by some small learning rate and adding to wieght matrix
             # this is where "learning" take place
-            self.W[layer] += -self.alpha * A[layer].T.dot(D[layer]) # <- gradient descent
+            self.W[layer] += -self.alpha * array_inputs[layer].T.dot(deltas[layer]) # <- gradient descent
 
     def predict(self, X, addBias=True):
         # initialize output prediction as input features
