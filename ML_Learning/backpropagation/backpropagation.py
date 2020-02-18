@@ -29,7 +29,9 @@ class NeuralNetwork:
         #max = np.ndarray.max(x)
         #x = x - max
         #return 1.0 / (1 + np.exp(-x))
-        return np.where(x > 0, 1.0 / (1.0 + np.exp(-x)), np.exp(x) / (np.exp(x) + np.exp(0)))
+        # return np.where(x > 0, 1.0 / (1.0 + np.exp(-x)), np.exp(x) / (np.exp(x) + np.exp(0)))
+        x -= np.max(x, axis=1, keepdims=True)
+        return np.exp(x)
 
     def sigmoid_deriv(self, x):
         return x * (1 - x)
