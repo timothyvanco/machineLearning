@@ -1,2 +1,2 @@
-# Machine Learning, Artificial Intelligence
-This repo is made as my learning folder
+# Machine Learning folder
+You can find many projects from ML group, which I am working on.
