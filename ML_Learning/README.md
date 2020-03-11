@@ -19,4 +19,5 @@ Main projects:
 ## MiniVGGNet
 - VGGNet was first introduced by Simonyan and Zisserman in their 2014 paper "Very Deep Learning Convolutional Neural Networks for Large-Scale Image Recognition". The primary contribution of their work was demonstrating that an architecture with very small (3 × 3) filters can be trained to increasingly higher depths (16-19 layers) and obtain state-of-the-art classification on the challenging ImageNet classification challenge
 - VGGNet is unique in that it uses 3 × 3 kernels throughout the entire architecture. The use of these small kernels is arguably what helps VGGNet generalize to classification problems outside what the network was originally trained on
+Usually looks like this:
 ![VGG_architecture](miniVGG_CIFAR10/VGG_architecture.png)
