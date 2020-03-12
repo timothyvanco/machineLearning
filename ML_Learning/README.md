@@ -21,3 +21,6 @@ Main projects:
 - VGGNet is unique in that it uses 3 × 3 kernels throughout the entire architecture. The use of these small kernels is arguably what helps VGGNet generalize to classification problems outside what the network was originally trained on
 - Usually looks like this:
 ![VGG_architecture](miniVGG_CIFAR10/VGG_architecture.png)
+
+## Visualize architecture
+- I am showing how easy it is to visualize architecture on LeNet example.
