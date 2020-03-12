@@ -20,7 +20,8 @@
 - extension of Inception which replaces the standard Inception modules with depth wise separable convolutions
 - size 91MB
 
-Here are examples of image classification by VGG16
+Here are examples of image classification by VGG16:
+
 ![koala](koala.png)
 ![pool_table](pool_table.png)
 ![soccer_ball](soccer_ball.png)
