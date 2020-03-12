@@ -23,10 +23,10 @@ MAIN PROJECTS:
 ![VGG_architecture](miniVGG_CIFAR10/VGG_architecture.png)
 
 ## Visualize architecture
-- I am showing how easy it is to visualize architecture on LeNet example.
+- I am showing how easy it is to visualize architecture on CNN such as LeNet example
 
 ## Pre_trained_CNNs
-- showing use of pre-trained CNNs as VGG16, VGG19, ResNet, InceptionV3, Xception on image classification
+- showing use of pre-trained CNNs such as VGG16, VGG19, ResNet, InceptionV3, Xception on image classification
 - example:
 
 ![soccer_ball](pre-trained_CNNs/soccer_ball.png)
