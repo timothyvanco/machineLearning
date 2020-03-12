@@ -21,7 +21,7 @@
 - size 91MB
 
 Here are examples of image classification by VGG16:
-Koala
+### Koala
 1. koala: 99.99%
 2. fox_squirrel: 0.01%
 3. indri: 0.00%
@@ -30,7 +30,7 @@ Koala
 
 ![koala](koala.png)
 
-Sports_car
+### Sports_car
 1. sports_car: 65.57%
 2. convertible: 10.63%
 3. cab: 5.72%
@@ -39,7 +39,7 @@ Sports_car
 
 ![sports_car](sports_car.png)
 
-Soccer_ball
+### Soccer_ball
 1. soccer_ball: 99.51%
 2. golf_ball: 0.22%
 3. teddy: 0.06%
