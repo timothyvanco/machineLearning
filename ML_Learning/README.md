@@ -15,6 +15,9 @@ MAIN PROJECTS:
 - So that the doctor does not have to compare each drawn picture with a picture drawn by a healthy person, it can be automated by computer.
 - My program can tell with approximately 83% accuracy whether a patient is healthy or ill. This is how the result looks on several test images
 - This is just a small example of how artificial intelligence can help people to be more efficient, faster and make better decisions
+- Result (go to the folder for more):
+
+![spiral](Parkinson\ desease/spiral.png)
 
 ## MiniVGGNet
 - VGGNet was first introduced by Simonyan and Zisserman in their 2014 paper "Very Deep Learning Convolutional Neural Networks for Large-Scale Image Recognition". The primary contribution of their work was demonstrating that an architecture with very small (3 × 3) filters can be trained to increasingly higher depths (16-19 layers) and obtain state-of-the-art classification on the challenging ImageNet classification challenge
