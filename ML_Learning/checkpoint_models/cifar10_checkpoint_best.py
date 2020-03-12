@@ -34,4 +34,5 @@ callbacks = [checkpoint]
 
 # train network
 print("[INFO] training network...")
-H = model.fit(trainX, trainY, validation_data=(testX, testY), batch_size=64, epochs=40, callbacks=callbacks, verbose=2)
+H = model.fit(trainX, trainY, validation_data=(testX, testY), batch_size=64, epochs=40, callbacks=callbacks, verbose=2
+              )
