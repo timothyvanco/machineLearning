@@ -28,4 +28,5 @@ MAIN PROJECTS:
 ## Pre_trained_CNNs
 - showing use of pre-trained CNNs as VGG16, VGG19, ResNet, InceptionV3, Xception on image classification
 - example:
+
 ![soccer_ball](pre-trained_CNNs/soccer_ball.png)
