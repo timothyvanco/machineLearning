@@ -2,7 +2,7 @@
 You can find many projects from ML group, which I am working on.
 (projects ending with - COLAB - means, that you can open them in colab environment and start code on Google's GPU)
 
-Main projects:
+MAIN PROJECTS:
 
 ## Lenet_MNIST
 - Lenet is basic Neural Net consist of two series of CONV => TANH => POOL layer sets followed by a fully-connected layer and softmax output
