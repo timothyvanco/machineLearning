@@ -21,6 +21,8 @@ model = load_model(args["model"])
 imagePaths = list(paths.list_images(args["input"]))
 imagePaths = np.random.choice(imagePaths, size=(10,), replace=False)
 
+i = 0
+
 # loop over the image paths
 for imagePath in imagePaths:
     # load image and convert it to grayscale, then pad image to ensure digits caught near
@@ -60,9 +62,10 @@ for imagePath in imagePaths:
         cv2.putText(output, str(pred), (x-5, y-5), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 255, 0), 2)
 
     print("[INFO] captcha: {}".format("".join(predictions)))
+    cv2.imwrite('image_{}.png'.format("".join(predictions)), output)
+    i += 1
     cv2.imshow("Output", output)
     cv2.waitKey()
-
 
 
 
