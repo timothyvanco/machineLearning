@@ -10,6 +10,22 @@ MAIN PROJECTS:
 - The LeNet architecture is straightforward and small (in terms of memory footprint), making it perfect for learning the basics of CNNs
 - I used it for recognizing handwritten digits
 
+## own DATASET + CNN (LeNet)
+
+I created my own custom dataset, which consist of a numbers (actually 4 numbers in one number “1234”)  and then training a CNN, which recognize each digit. I also had to use OpenCV library, which help me to define digits. This is series of steps I made:
+1. Downloading a set of images
+2. Labeling and annotating images for training 
+3. Training a CNN on my custom dataset
+4. Evaluating and testing the trained CNN
+
+After only 15 epochs LeNet network is obtaining 100% classification accuracy on both the training and validation sets.
+Here are results:
+
+![image_1518](captcha/image_1518.png)
+![image_2572](captcha/image_2572.png)
+![image_2953](captcha/image_2953.png)
+![image_4129](captcha/image_4129.png)
+
 ## Parkinson desease
 - People with Parkinson's disease have difficulty controlling body movements and the patient gradually loses the ability to perform daily tasks. Currently, Parkinson's disease cannot be cured, but after diagnosis, symptoms of the disease can be effectively alleviated. One method of diagnosis is the so-called geometric test (2017), in which the patient draws spirals or waves. Based on such a test, the doctor can determine whether or not the patient has Parkinson's disease.
 - So that the doctor does not have to compare each drawn picture with a picture drawn by a healthy person, it can be automated by computer.
