@@ -7,6 +7,9 @@ I created my own custom dataset, which consist of a numbers (actually 4 numbers 
 4. Evaluating and testing the trained CNN
 
 After only 15 epochs LeNet network is obtaining 100% classification accuracy on both the training and validation sets.
+
+![training_Loss_Acc](training_Loss_Acc.png)
+
 Here are results:
 
 ![image_1518](image_1518.png)
