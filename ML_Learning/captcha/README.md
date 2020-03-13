@@ -1,4 +1,4 @@
-### own DATASET + CNN (LeNet)
+## own DATASET + CNN (LeNet)
 
 I created my own custom dataset, which consist of a numbers (actually 4 numbers in one number “1234”)  and then training a CNN, which recognize each digit. I also had to use OpenCV library, which help me to define digits. This is series of steps I made:
 1. Downloading a set of images
@@ -10,7 +10,7 @@ After only 15 epochs LeNet network is obtaining 100% classification accuracy on 
 
 ![training_Loss_Acc](training_Loss_Acc.png)
 
-Here are results:
+### Here are results:
 
 ![image_1518](image_1518.png)
 ![image_2572](image_2572.png)
