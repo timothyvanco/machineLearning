@@ -26,6 +26,21 @@ Here are results:
 ![image_2953](captcha/image_2953.png)
 ![image_4129](captcha/image_4129.png)
 
+## SMILE DETECTION
+I used LeNet CNN to train and then recognize, if I am smiling or not.
+
+For training the CNN I used SMILES dataset. After training LeNet had 93% classification accuracy. 
+Higher classification accuracy can be obtained by gathering more training data or applying data augmentation to existing training data.
+
+Then I created a Python script to read frames from a webcam/video file, detect faces, and then apply my pre-trained network. In order to detect faces, I used OpenCV’s Haar cascades. Once a face was detected it was extracted from the frame and then passed through LeNet to determine if I was smiling or not smiling. 
+
+### RESULTS
+### smiling
+![smiling](smile_detection/Smiling.png)
+
+### not smiling
+![notsmiling](smile_detection/Not_Smiling.png)
+
 ## Parkinson desease
 - People with Parkinson's disease have difficulty controlling body movements and the patient gradually loses the ability to perform daily tasks. Currently, Parkinson's disease cannot be cured, but after diagnosis, symptoms of the disease can be effectively alleviated. One method of diagnosis is the so-called geometric test (2017), in which the patient draws spirals or waves. Based on such a test, the doctor can determine whether or not the patient has Parkinson's disease.
 - So that the doctor does not have to compare each drawn picture with a picture drawn by a healthy person, it can be automated by computer.
