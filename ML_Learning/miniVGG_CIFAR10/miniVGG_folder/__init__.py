@@ -1,1 +1,0 @@
-from .minivggnet import MiniVGGNet
