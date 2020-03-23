@@ -50,6 +50,28 @@ Then I created a Python script to read frames from a webcam/video file, detect f
 
 ![spiral](Parkinson_desease/spiral.png)
 
+
+## COVID-19 DETECTOR
+
+![covid_19header](COVID_19/covid19_keras_header.jpg)
+
+How can Artificial intelligence and Deep learning help to detect patients with Covid-19?
+
+I use Keras, TensorFlow, and Deep Learning to train an automatic COVID-19 detector on a dataset of X-ray images.
+High quality, peer reviewed image datasets for COVID-19 don’t exist (yet), so I had to work with what I found on the internet, namely on pyimagesearch web and there from Joseph Cohen’s GitHub repo of open-source X-ray images:
+
+### This is how it looks like:
+On the left side - positive patients for COVID-19 and on the right side - negative patients for COVID-19.
+These images are used to train a deep learning model with TensorFlow and Keras to automatically predict 
+whether a patient has COVID-19 (i.e., coronavirus)
+![covid19_keras_dataset](COVID_19/covid19_keras_dataset.png)
+
+I am obtaining 80% sensitivity and 100% specificity implying that:
+- Of patients that do have COVID-19 (i.e., true positives), I could accurately identify them as “COVID-19 positive” 80% of the time using my model.
+- Of patients that do not have COVID-19 (i.e., true negatives), we could accurately identify them as “COVID-19 negative” on 100% of the time using my model.
+
+
+
 ## MiniVGGNet
 - VGGNet was first introduced by Simonyan and Zisserman in their 2014 paper "Very Deep Learning Convolutional Neural Networks for Large-Scale Image Recognition". The primary contribution of their work was demonstrating that an architecture with very small (3 × 3) filters can be trained to increasingly higher depths (16-19 layers) and obtain state-of-the-art classification on the challenging ImageNet classification challenge
 - VGGNet is unique in that it uses 3 × 3 kernels throughout the entire architecture. The use of these small kernels is arguably what helps VGGNet generalize to classification problems outside what the network was originally trained on
