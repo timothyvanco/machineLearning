@@ -1,3 +1,9 @@
+# COVID-19 DETECTOR
+
+![covid_19header](covid19_keras_header.jpg)
+
+How can Artificial intelligence and Deep learning help to detect patients with Covid-19?
+
 I use Keras, TensorFlow, and Deep Learning to train an automatic COVID-19 detector on a dataset of X-ray images.
 High quality, peer reviewed image datasets for COVID-19 don’t exist (yet), so I had to work with what I found on the internet, namely on pyimagesearch web and there from Joseph Cohen’s GitHub repo of open-source X-ray images:
 
