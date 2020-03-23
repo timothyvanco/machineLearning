@@ -64,6 +64,7 @@ High quality, peer reviewed image datasets for COVID-19 don’t exist (yet), so 
 On the left side - positive patients for COVID-19 and on the right side - negative patients for COVID-19.
 These images are used to train a deep learning model with TensorFlow and Keras to automatically predict 
 whether a patient has COVID-19 (i.e., coronavirus)
+
 ![covid19_keras_dataset](COVID_19/covid19_keras_dataset.png)
 
 I am obtaining 80% sensitivity and 100% specificity implying that:
