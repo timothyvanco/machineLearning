@@ -14,6 +14,7 @@ Then sampled 25 images of healthy patients using Kaggle’s Chest X-Ray Images (
 On the left side - positive patients for COVID-19 and on the right side - negative patients for COVID-19.
 These images are used to train a deep learning model with TensorFlow and Keras to automatically predict 
 whether a patient has COVID-19 (i.e., coronavirus)
+
 ![covid19_keras_dataset](covid19_keras_dataset.png)
 
 
