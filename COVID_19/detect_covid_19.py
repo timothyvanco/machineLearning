@@ -82,7 +82,7 @@ baseModel = VGG16(weights="imagenet", include_top=False, input_tensor=Input(shap
 # construct head of the model that will be placed on top of the base model
 # WHY?
 headModel = baseModel.output
-headModel = AveragePooling2D(pool_size=(4, 4))(headModel)
+headModel = AveragePooling2D(pool_size=(2, 2))(headModel)
 headModel = Flatten(name="flatten")(headModel)
 headModel = Dense(64, activation="relu")(headModel)
 headModel = Dropout(0.5)(headModel)
@@ -133,9 +133,9 @@ specificity = cm[1, 1] / (cm[1, 0] + cm[1, 1])
 
 # show confusion matrix, accuracy, sensitivity, specificity
 print(cm)
-print("accuracy: {:.4f".format(accuracy))
-print("sensitivity: {:.4f".format(sensitivity))
-print("specificity: {:.4f".format(specificity))
+print("accuracy: {:.4f}".format(accuracy))
+print("sensitivity: {:.4f}".format(sensitivity))
+print("specificity: {:.4f}".format(specificity))
 
 # plot training loss and accuracy
 N = EPOCHS
